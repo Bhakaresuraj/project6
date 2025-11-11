@@ -1,0 +1,108 @@
+DevOps Pipeline Health Report
+Generated: Tue Nov 11 03:44:01 PM IST 2025
+================================
+
+Cluster Status:
+Kubernetes control plane is running at https://127.0.0.1:34679
+CoreDNS is running at https://127.0.0.1:34679/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+Node Status:
+NAME                            STATUS   ROLES           AGE     VERSION
+devops-pipeline-control-plane   Ready    control-plane   8m29s   v1.27.3
+
+Namespace Status:
+NAME                 STATUS   AGE
+argocd               Active   6m48s
+default              Active   8m29s
+gitea                Active   6m48s
+ingress-nginx        Active   7m55s
+kube-node-lease      Active   8m29s
+kube-public          Active   8m29s
+kube-system          Active   8m29s
+local-path-storage   Active   8m23s
+minio                Active   6m48s
+registry             Active   92s
+trivy-system         Active   6m48s
+velero               Active   6m48s
+
+Pod Status:
+NAMESPACE            NAME                                                    READY   STATUS              RESTARTS        AGE
+argocd               argocd-application-controller-0                         1/1     Running             0               3m38s
+argocd               argocd-applicationset-controller-5468f5bc49-4jlnz       1/1     Running             0               3m39s
+argocd               argocd-dex-server-5d4d47bcc4-qqz8n                      1/1     Running             0               3m39s
+argocd               argocd-notifications-controller-ddc8fdf8-btq8d          1/1     Running             0               3m39s
+argocd               argocd-redis-66bbcf856f-v6tp6                           1/1     Running             0               3m39s
+argocd               argocd-repo-server-7bcdcf66dd-4zvtb                     1/1     Running             0               3m38s
+argocd               argocd-server-644f7bcf6f-gfmtx                          1/1     Running             0               3m38s
+gitea                gitea-565d5f8bcc-zk6rg                                  1/1     Running             0               6m40s
+gitea                gitea-postgresql-ha-pgpool-d46955765-cpm26              1/1     Running             1 (5m19s ago)   6m40s
+gitea                gitea-postgresql-ha-postgresql-0                        1/1     Running             0               6m40s
+gitea                gitea-postgresql-ha-postgresql-1                        1/1     Running             1 (4m40s ago)   6m40s
+gitea                gitea-postgresql-ha-postgresql-2                        1/1     Running             0               6m40s
+gitea                gitea-valkey-cluster-0                                  1/1     Running             1 (5m ago)      6m40s
+gitea                gitea-valkey-cluster-1                                  1/1     Running             0               6m40s
+gitea                gitea-valkey-cluster-2                                  1/1     Running             1 (4m49s ago)   6m40s
+ingress-nginx        ingress-nginx-controller-6bc8c55c76-pvz9n               1/1     Running             0               7m55s
+kube-system          coredns-5d78c9869d-l892q                                1/1     Running             0               8m11s
+kube-system          coredns-5d78c9869d-xnnqg                                1/1     Running             0               8m11s
+kube-system          etcd-devops-pipeline-control-plane                      1/1     Running             0               8m25s
+kube-system          kindnet-2n6qv                                           1/1     Running             0               8m12s
+kube-system          kube-apiserver-devops-pipeline-control-plane            1/1     Running             0               8m25s
+kube-system          kube-controller-manager-devops-pipeline-control-plane   1/1     Running             0               8m25s
+kube-system          kube-proxy-g7dvl                                        1/1     Running             0               8m12s
+kube-system          kube-scheduler-devops-pipeline-control-plane            1/1     Running             0               8m25s
+local-path-storage   local-path-provisioner-6bc4bddd6b-lj8m4                 1/1     Running             0               8m11s
+minio                minio-5c9d6fd7b4-ncnbr                                  1/1     Running             0               2m33s
+registry             docker-registry-b84bdd58f-t7qgn                         1/1     Running             0               92s
+trivy-system         node-collector-78f575bfcd-pvd6k                         0/1     ContainerCreating   0               45s
+trivy-system         scan-vulnerabilityreport-557f79f987-5cq7d               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-586849b65-kt9d4                0/1     Init:0/1            0               47s
+trivy-system         scan-vulnerabilityreport-5d7549b559-5d6th               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-6497885777-dtffx               0/1     Init:0/1            0               47s
+trivy-system         scan-vulnerabilityreport-6568c7bbc5-d74zh               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-689c46f56b-m9k7w               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-6b67b948c7-zb557               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-74b9cf67dd-mm8qt               0/1     Init:0/1            0               47s
+trivy-system         scan-vulnerabilityreport-76bb8cdc96-cp5pk               0/1     Init:0/1            0               46s
+trivy-system         scan-vulnerabilityreport-7b7795ff86-9tmrr               0/1     Init:0/1            0               47s
+trivy-system         scan-vulnerabilityreport-8cb9b798c-sr45b                0/1     Init:0/1            0               46s
+trivy-system         trivy-operator-d8564d49f-457ms                          1/1     Running             0               72s
+velero               velero-64ccd79c59-mwj4v                                 0/1     Pending             0               37s
+
+Service Status:
+NAMESPACE       NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+argocd          argocd-applicationset-controller          ClusterIP      10.96.14.233    <none>        7000/TCP,8080/TCP            3m40s
+argocd          argocd-dex-server                         ClusterIP      10.96.221.76    <none>        5556/TCP,5557/TCP,5558/TCP   3m40s
+argocd          argocd-metrics                            ClusterIP      10.96.148.171   <none>        8082/TCP                     3m40s
+argocd          argocd-notifications-controller-metrics   ClusterIP      10.96.224.39    <none>        9001/TCP                     3m40s
+argocd          argocd-redis                              ClusterIP      10.96.85.204    <none>        6379/TCP                     3m40s
+argocd          argocd-repo-server                        ClusterIP      10.96.28.75     <none>        8081/TCP,8084/TCP            3m40s
+argocd          argocd-server                             LoadBalancer   10.96.69.242    <pending>     80:31356/TCP,443:32310/TCP   3m40s
+argocd          argocd-server-metrics                     ClusterIP      10.96.199.241   <none>        8083/TCP                     3m40s
+default         kubernetes                                ClusterIP      10.96.0.1       <none>        443/TCP                      8m28s
+gitea           gitea-http                                ClusterIP      None            <none>        3000/TCP                     6m41s
+gitea           gitea-postgresql-ha-pgpool                ClusterIP      10.96.29.76     <none>        5432/TCP                     6m41s
+gitea           gitea-postgresql-ha-postgresql            ClusterIP      10.96.118.198   <none>        5432/TCP                     6m41s
+gitea           gitea-postgresql-ha-postgresql-headless   ClusterIP      None            <none>        5432/TCP                     6m41s
+gitea           gitea-ssh                                 ClusterIP      None            <none>        22/TCP                       6m41s
+gitea           gitea-valkey-cluster                      ClusterIP      10.96.250.53    <none>        6379/TCP                     6m41s
+gitea           gitea-valkey-cluster-headless             ClusterIP      None            <none>        6379/TCP,16379/TCP           6m41s
+ingress-nginx   ingress-nginx-controller                  LoadBalancer   10.96.193.213   <pending>     80:31100/TCP,443:31844/TCP   7m56s
+ingress-nginx   ingress-nginx-controller-admission        ClusterIP      10.96.158.229   <none>        443/TCP                      7m56s
+kube-system     kube-dns                                  ClusterIP      10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP       8m26s
+minio           minio                                     ClusterIP      10.96.212.22    <none>        9000/TCP                     2m34s
+minio           minio-console                             ClusterIP      10.96.235.201   <none>        9001/TCP                     2m34s
+registry        docker-registry                           NodePort       10.96.132.118   <none>        5000:30500/TCP               93s
+trivy-system    trivy-operator                            ClusterIP      None            <none>        80/TCP                       74s
+
+Ingress Status:
+NAMESPACE   NAME    CLASS    HOSTS         ADDRESS     PORTS   AGE
+gitea       gitea   <none>   gitea.local   localhost   80      6m41s
+
+ArgoCD Applications:
+
+Velero Backups:
+
+Trivy Vulnerability Reports:

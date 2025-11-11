@@ -1,0 +1,25 @@
+DevOps Pipeline Health Report
+Generated: Tue Nov 11 03:17:42 PM IST 2025
+================================
+
+Cluster Status:
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+Node Status:
+
+Namespace Status:
+
+Pod Status:
+
+Service Status:
+
+Ingress Status:
+
+ArgoCD Applications:
+
+Velero Backups:
+No backups found
+
+Trivy Vulnerability Reports:
+No vulnerability reports found

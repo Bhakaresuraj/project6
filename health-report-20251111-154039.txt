@@ -1,0 +1,89 @@
+DevOps Pipeline Health Report
+Generated: Tue Nov 11 03:40:39 PM IST 2025
+================================
+
+Cluster Status:
+Kubernetes control plane is running at https://127.0.0.1:34679
+CoreDNS is running at https://127.0.0.1:34679/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+Node Status:
+NAME                            STATUS   ROLES           AGE    VERSION
+devops-pipeline-control-plane   Ready    control-plane   5m7s   v1.27.3
+
+Namespace Status:
+NAME                 STATUS   AGE
+argocd               Active   3m26s
+default              Active   5m7s
+gitea                Active   3m26s
+ingress-nginx        Active   4m33s
+kube-node-lease      Active   5m7s
+kube-public          Active   5m7s
+kube-system          Active   5m7s
+local-path-storage   Active   5m1s
+minio                Active   3m26s
+trivy-system         Active   3m26s
+velero               Active   3m26s
+
+Pod Status:
+NAMESPACE            NAME                                                    READY   STATUS              RESTARTS       AGE
+argocd               argocd-application-controller-0                         0/1     ContainerCreating   0              16s
+argocd               argocd-applicationset-controller-5468f5bc49-4jlnz       0/1     ContainerCreating   0              17s
+argocd               argocd-dex-server-5d4d47bcc4-qqz8n                      0/1     Init:0/1            0              17s
+argocd               argocd-notifications-controller-ddc8fdf8-btq8d          0/1     ContainerCreating   0              17s
+argocd               argocd-redis-66bbcf856f-v6tp6                           0/1     Init:0/1            0              17s
+argocd               argocd-repo-server-7bcdcf66dd-4zvtb                     0/1     Init:0/1            0              16s
+argocd               argocd-server-644f7bcf6f-gfmtx                          0/1     ContainerCreating   0              16s
+gitea                gitea-565d5f8bcc-zk6rg                                  1/1     Running             0              3m18s
+gitea                gitea-postgresql-ha-pgpool-d46955765-cpm26              1/1     Running             1 (117s ago)   3m18s
+gitea                gitea-postgresql-ha-postgresql-0                        1/1     Running             0              3m18s
+gitea                gitea-postgresql-ha-postgresql-1                        1/1     Running             1 (78s ago)    3m18s
+gitea                gitea-postgresql-ha-postgresql-2                        1/1     Running             0              3m18s
+gitea                gitea-valkey-cluster-0                                  1/1     Running             1 (98s ago)    3m18s
+gitea                gitea-valkey-cluster-1                                  1/1     Running             0              3m18s
+gitea                gitea-valkey-cluster-2                                  1/1     Running             1 (87s ago)    3m18s
+ingress-nginx        ingress-nginx-controller-6bc8c55c76-pvz9n               1/1     Running             0              4m33s
+kube-system          coredns-5d78c9869d-l892q                                1/1     Running             0              4m49s
+kube-system          coredns-5d78c9869d-xnnqg                                1/1     Running             0              4m49s
+kube-system          etcd-devops-pipeline-control-plane                      1/1     Running             0              5m3s
+kube-system          kindnet-2n6qv                                           1/1     Running             0              4m50s
+kube-system          kube-apiserver-devops-pipeline-control-plane            1/1     Running             0              5m3s
+kube-system          kube-controller-manager-devops-pipeline-control-plane   1/1     Running             0              5m3s
+kube-system          kube-proxy-g7dvl                                        1/1     Running             0              4m50s
+kube-system          kube-scheduler-devops-pipeline-control-plane            1/1     Running             0              5m3s
+local-path-storage   local-path-provisioner-6bc4bddd6b-lj8m4                 1/1     Running             0              4m49s
+
+Service Status:
+NAMESPACE       NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+argocd          argocd-applicationset-controller          ClusterIP      10.96.14.233    <none>        7000/TCP,8080/TCP            17s
+argocd          argocd-dex-server                         ClusterIP      10.96.221.76    <none>        5556/TCP,5557/TCP,5558/TCP   17s
+argocd          argocd-metrics                            ClusterIP      10.96.148.171   <none>        8082/TCP                     17s
+argocd          argocd-notifications-controller-metrics   ClusterIP      10.96.224.39    <none>        9001/TCP                     17s
+argocd          argocd-redis                              ClusterIP      10.96.85.204    <none>        6379/TCP                     17s
+argocd          argocd-repo-server                        ClusterIP      10.96.28.75     <none>        8081/TCP,8084/TCP            17s
+argocd          argocd-server                             ClusterIP      10.96.69.242    <none>        80/TCP,443/TCP               17s
+argocd          argocd-server-metrics                     ClusterIP      10.96.199.241   <none>        8083/TCP                     17s
+default         kubernetes                                ClusterIP      10.96.0.1       <none>        443/TCP                      5m5s
+gitea           gitea-http                                ClusterIP      None            <none>        3000/TCP                     3m18s
+gitea           gitea-postgresql-ha-pgpool                ClusterIP      10.96.29.76     <none>        5432/TCP                     3m18s
+gitea           gitea-postgresql-ha-postgresql            ClusterIP      10.96.118.198   <none>        5432/TCP                     3m18s
+gitea           gitea-postgresql-ha-postgresql-headless   ClusterIP      None            <none>        5432/TCP                     3m18s
+gitea           gitea-ssh                                 ClusterIP      None            <none>        22/TCP                       3m18s
+gitea           gitea-valkey-cluster                      ClusterIP      10.96.250.53    <none>        6379/TCP                     3m18s
+gitea           gitea-valkey-cluster-headless             ClusterIP      None            <none>        6379/TCP,16379/TCP           3m18s
+ingress-nginx   ingress-nginx-controller                  LoadBalancer   10.96.193.213   <pending>     80:31100/TCP,443:31844/TCP   4m33s
+ingress-nginx   ingress-nginx-controller-admission        ClusterIP      10.96.158.229   <none>        443/TCP                      4m33s
+kube-system     kube-dns                                  ClusterIP      10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP       5m3s
+
+Ingress Status:
+NAMESPACE   NAME    CLASS    HOSTS         ADDRESS     PORTS   AGE
+gitea       gitea   <none>   gitea.local   localhost   80      3m19s
+
+ArgoCD Applications:
+
+Velero Backups:
+No backups found
+
+Trivy Vulnerability Reports:
+No vulnerability reports found
